@@ -66,7 +66,8 @@ for row in csv_reader2:
 clean_trump_data = []
 clean_trump_words = []
 for word in stopwords_file:
-    stopwords.append(word.strip())
+    word = word.strip()
+    stopwords.append(word)
 for row in trump_data:
     clean_words = txt_clean(row, stopwords)
     clean_trump_words.append(clean_words)
@@ -78,7 +79,7 @@ from collections import Counter
 a2 = sum(clean_trump_words,[])
 Counter = Counter(a2)
 most_occur2 = Counter.most_common(10)
-print("The 10 most common tweeted words during election campaign by Donald Trump are:")
+print("The 10 most common tweeted words by Donald Trump are:")
 print(most_occur2)
 
 #Sentiment Analysis of Biden Tweets to print most positive and negative tweets
